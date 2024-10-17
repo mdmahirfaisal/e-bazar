@@ -37,7 +37,7 @@ import { CategoryList } from "./pages/categories";
 import { ColorModeContextProvider } from "./contexts";
 import { Header, Title } from "./components";
 import { useAutoLoginForDemo } from "./hooks";
-
+import initializeFirebase from "./Firebase/Firebase.init";
 const API_URL = "https://api.finefoods.refine.dev";
 
 const App: React.FC = () => {
@@ -55,6 +55,9 @@ const App: React.FC = () => {
   if (loading) {
     return null;
   }
+  
+  // initialize firebase configuration
+  initializeFirebase();
 
   return (
     <BrowserRouter>
